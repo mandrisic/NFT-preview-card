@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+//FONTS
+$font: 'Outfit';
+// COLORS
+$soft-blue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$cyan-soft: hsla(178, 100%, 50%, 0.5);
+$main-bg: hsl(217, 54%, 11%);
+$card-bg: hsl(216, 50%, 16%);
+$line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+// BREAKPOINTS
+$breakpoints: (
+  "small": 20em,        // 320px
+  "tablet": 48em,       // 768px
+  "laptop": 64em,       // 1024px
+  "desktop": 90em       // 1440px
+);

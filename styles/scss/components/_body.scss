@@ -1,0 +1,21 @@
+@use '../global/variables' as *;
+@use '../global/mixins' as *;
+
+body {
+    background-color: $main-bg;
+    height: 100vh;
+    width: 100%;
+    @include flexTemplate(column, center, center);
+    font-family: $font;
+}
+
+footer { 
+    font-size: 1.2rem; 
+    position: absolute;
+    bottom: 2em;
+    color: $white;
+    
+    a { 
+        color: $cyan; 
+    }
+}

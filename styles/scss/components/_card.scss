@@ -1,0 +1,218 @@
+@use '../global/variables' as *;
+@use '../global/mixins' as *;
+
+.card {
+    width: 88%;
+    background-color: $card-bg;
+    @include flexTemplate(column, space-between, center);
+    padding: 2.5em;
+    border-radius: 1.5em;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 22px 20px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+
+    @include respond('tablet'){
+        width: 50%;
+    }
+
+    @include respond('laptop'){
+        width: 24%;
+        padding: 1.8em;
+        border-radius: 1.2em;
+    }
+
+    @include respond('desktop'){
+        width: 25%;
+        padding: 2.5em;
+        border-radius: 1.5em;
+    }
+
+    &__image-container {
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__image {
+        width: 100%;
+        border-radius: 1em;
+    }
+
+    &__overlay {
+        @include flexTemplate(column, center, center);
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 1em;
+        height: 100%;
+        width: 100%;
+        background-color: $cyan-soft;
+        z-index: 100;
+        transition: opacity .3s;
+        &:hover {
+            opacity: 1;
+        }
+
+    }
+
+    &__container {
+        @include flexTemplate(column, space-between, flex-start);
+        gap: 1.5em;
+        padding-top: 2em;
+        @include respond('tablet'){
+            gap: 2.5em;
+            padding-top: 3em;
+            padding-bottom: 1em;
+        }
+
+        @include respond('laptop'){
+            gap: 2em;
+            padding-top: 2.5em;
+            padding-bottom: .5em;
+        }
+
+        @include respond('desktop'){
+            gap: 2em;
+            padding-top: 2.5em;
+            padding-bottom: .5em;
+        }
+    }
+
+    h1 {
+        color: $white;
+        font-size: 2.2rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: color .3s;
+
+        @include respond('tablet'){
+            font-size: 2.6rem;
+        }
+
+        @include respond('laptop'){
+            font-size: 1.8rem;
+        }
+
+        @include respond('desktop'){
+            font-size: 2.2rem;
+        }
+
+        &:hover {
+            color: $cyan;
+        }
+    }
+
+    &__desc {
+        color: $soft-blue;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 1.5em;
+
+        @include respond('tablet'){
+            font-size: 2.2rem;
+        }
+
+        @include respond('laptop'){
+            font-size: 1.4rem;
+        }
+
+        @include respond('desktop'){
+            font-size: 1.8rem;
+        }
+    }
+
+    &__details {
+        width: 100%;
+        @include flexTemplate(row, space-between, center);
+        border-bottom: .1em solid $line;
+        padding-bottom: 1.5em;
+
+        @include respond('tablet'){
+            padding-bottom: 2.5em;
+        }
+
+        @include respond('laptop', 'desktop'){
+            padding-bottom: 2.5em;
+        }
+
+        &-item {
+            @include flexTemplate(row, flex-start, center);
+            gap: 1em;
+
+            @include respond('laptop'){
+                gap: .5em;
+            }
+
+            @include respond('desktop'){
+                gap: 1em;
+            }
+
+            p {
+                font-size: 1.6rem;
+                @include respond('tablet'){
+                    font-size: 2rem;
+                }
+
+                @include respond('laptop'){
+                    font-size: 1.4rem;
+                }
+
+                @include respond('desktop'){
+                    font-size: 1.6rem;
+                }
+            }
+
+            &--eth p {
+                color: $cyan;
+            }
+
+            &--days p {
+                color: $soft-blue;
+            }
+        }
+    }
+
+    &__author {
+        @include flexTemplate(row, flex-start, center);
+        gap: 2em;
+
+        @include respond('laptop'){
+            gap: 1em;
+        }
+
+        @include respond('desktop'){
+            gap: 2em;
+        }
+
+        img {
+            width: 3.5em;
+            border-radius: 50%;
+            border: .1em solid $white;
+        }
+
+        p {
+            color: $soft-blue;
+            font-size: 1.6rem;
+            font-weight: 300;
+            @include respond('tablet'){
+                font-size: 2rem;
+            }
+
+            @include respond('laptop'){
+                font-size: 1.4rem;
+            }
+
+            @include respond('desktop'){
+                font-size: 1.6rem;
+            }
+
+            span {
+                color: $white;
+                cursor: pointer;
+                transition: color .3s;
+
+                &:hover {
+                    color: $cyan;
+                }
+            }
+        }
+    }
+}
